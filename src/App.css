@@ -210,3 +210,24 @@ button:hover {
     gap: 10px;
   }
 }
+
+
+.dark-mode {
+  background-color: #0f172a;
+  color: white;
+}
+
+.dark-mode .top-navbar {
+  background-color: #020617;
+  border-color: #1e293b;
+}
+
+.dark-mode .card {
+  background-color: #1e293b;
+  color: white;
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+  border-color: #334155;
+}
