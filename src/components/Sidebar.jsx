@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { FaHome, FaUser, FaCog, FaBars } from "react-icons/fa";
 import { useState } from "react";
-// import "./Sidebar.css";
+import { RxCross2 } from "react-icons/rx";
 
-// ✅ Menu configuration (scalable & reusable)
 const menuItems = [
   { path: "/", label: "Dashboard", icon: <FaHome /> },
   { path: "/profile", label: "Profile", icon: <FaUser /> },
@@ -13,22 +12,22 @@ const menuItems = [
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
 
+  function toggleSidebar() {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <aside className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
-      {/* ✅ Toggle Button */}
+      
       <div className="sidebar-header">
-        <button
-          className="toggle-btn"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Sidebar"
-        >
-          <FaBars />
+        <button className="toggle-btn" onClick={toggleSidebar}>
+            {isOpen ? <FaBars /> : <RxCross2 />}
         </button>
-        {isOpen && <h2 className="logo">MyAdmin</h2>}
+
+        {isOpen && <h2>MyAdmin</h2>}
       </div>
 
-      {/* ✅ Navigation */}
-      <nav className="sidebar-nav">
+      <nav>
         {menuItems.map((item) => (
           <NavLink
             key={item.path}
@@ -37,8 +36,8 @@ export default function Sidebar() {
               isActive ? "nav-link active" : "nav-link"
             }
           >
-            <span className="icon">{item.icon}</span>
-            {isOpen && <span className="text">{item.label}</span>}
+            {item.icon}
+            {isOpen && <span>{item.label}</span>}
           </NavLink>
         ))}
       </nav>
