@@ -7,10 +7,10 @@ export default function Settings() {
     return saved
       ? JSON.parse(saved)
       : {
-          darkMode: false,
-          notifications: true,
-          language: "en",
-        };
+        darkMode: false,
+        notifications: true,
+        language: "en",
+      };
   });
 
   const { darkMode, notifications, language } = settings;
@@ -73,7 +73,7 @@ export default function Settings() {
           <option value="fr">French</option>
         </select>
       </div>
-     
+
     </div>
   );
 }
