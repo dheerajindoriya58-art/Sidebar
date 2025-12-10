@@ -1,14 +1,12 @@
-export default function Profile() {
+export default function Settings() {
   return (
-    <div className="page profile">
-      <h1>Profile</h1>
-      <form className="profile-form">
-        <label>Name</label>
-        <input type="text" placeholder="Enter your name" />
-        <label>Email</label>
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">Save</button>
-      </form>
+    <div className="page settings">
+      <h1>Settings</h1>
+      <div className="settings-option">
+        <label>
+          <input type="checkbox" /> Enable Dark Mode
+        </label>
+      </div>
     </div>
   );
 }
