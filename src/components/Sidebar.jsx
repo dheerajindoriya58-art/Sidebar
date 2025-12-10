@@ -1,29 +1,25 @@
 import { NavLink } from "react-router-dom";
 import { FaHome, FaUser, FaCog, FaBars } from "react-icons/fa";
-import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { useState } from "react";
 
 const menuItems = [
   { path: "/", label: "Dashboard", icon: <FaHome /> },
   { path: "/profile", label: "Profile", icon: <FaUser /> },
   { path: "/settings", label: "Settings", icon: <FaCog /> },
+  { path: "/users", label: "Users", icon: <FaUser /> },
 ];
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
-
-  function toggleSidebar() {
-    setIsOpen(!isOpen);
-  }
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
     <aside className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
-      
       <div className="sidebar-header">
         <button className="toggle-btn" onClick={toggleSidebar}>
-            {isOpen ? <FaBars /> : <RxCross2 />}
+          {isOpen ? <FaBars /> : <RxCross2 />}
         </button>
-
         {isOpen && <h2>MyAdmin</h2>}
       </div>
 
