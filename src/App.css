@@ -163,7 +163,7 @@ nav {
 
 /* FORM STYLING */
 input[type="text"], input[type="email"], select {
-  width: 340px;
+  width: 100%;
   padding: 8px 12px;
   margin: 5px 0 15px 0;
   border-radius: 6px;
@@ -183,6 +183,8 @@ button {
 button:hover {
   background-color: #1e40af;
 }
+
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
