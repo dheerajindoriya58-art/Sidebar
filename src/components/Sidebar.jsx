@@ -32,8 +32,15 @@ export default function Sidebar() {
               isActive ? "nav-link active" : "nav-link"
             }
           >
-            {item.icon}
-            {isOpen && <span>{item.label}</span>}
+
+            <div>
+              {item.icon}
+            </div>
+
+            <div>
+              {isOpen && <span className="label-item"> {item.label}</span>}
+            </div>
+
           </NavLink>
         ))}
       </nav>
